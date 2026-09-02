@@ -145,4 +145,4 @@ MIT — free to use, remix and learn from. Keep the credit line if you fork it.
 
 ---
 
-<p align="center">Made with ❤️ in Tunisia · © 2025 TunDev — For students, by students</p>
+<p align="center">Made with ❤️ in Tunisia · © 2026 TunDev — For students, by students</p>
