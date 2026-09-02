@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TunDev — the free resource hub for Tunisian IT students: curated courses, tools, roadmaps, communities and real-world guides." />
+  <title>TunDev — Free IT Resources for Tunisian Students</title>
+
+  <!-- Favicon: simplified Tunisian flag -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="%23E63946"/><circle cx="50" cy="50" r="27" fill="white"/><circle cx="47" cy="50" r="16" fill="%23E63946"/><circle cx="52" cy="50" r="13" fill="white"/></svg>' />
+
+  <!-- Google Fonts: Poppins (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 + Bootstrap Icons via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Shared TunDev styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Scripts (deferred, execute in order after HTML parse) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <!-- ============================================================
+       SHARED NAVBAR
+       ============================================================ -->
+  <nav class="navbar navbar-expand-lg navbar-tundev sticky-top" id="mainNav">
+    <div class="container">
+      <!-- Brand: SVG Tunisian flag + wordmark -->
+      <a class="navbar-brand d-flex align-items-center gap-2 me-lg-4" href="index.html" aria-label="TunDev home">
+        <svg class="flag-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="15" fill="#E63946"/>
+          <circle cx="16" cy="16" r="8.6" fill="#fff"/>
+          <path fill="#E63946" d="M15 12.2a3.9 3.9 0 1 0 0 7.6 4.6 4.6 0 0 1 0-7.6zm2.8 1.5l.9 1.7 1.9.2-1.4 1.3.4 1.9-1.7-1-1.7 1 .4-1.9-1.4-1.3 1.9-.2z"/>
+        </svg>
+        <span class="brand-text">Tun<em>Dev</em></span>
+      </a>
+
+      <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
+        <!-- Dark / light mode toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <i data-lucide="moon" class="icon-moon" width="18"></i>
+          <i data-lucide="sun" class="icon-sun" width="18"></i>
+        </button>
+        <!-- Mobile hamburger -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation" style="border-color: var(--border);">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Nav links (internal — no target="_blank") -->
+      <div class="collapse navbar-collapse order-lg-2" id="navContent">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0 gap-lg-1">
+          <li class="nav-item"><a class="nav-link" data-route="home" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" data-route="resources" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" data-route="roadmaps" href="roadmaps.html">Roadmaps</a></li>
+          <li class="nav-item"><a class="nav-link" data-route="tunisia" href="tunisia.html">Tunisia</a></li>
+          <li class="nav-item"><a class="nav-link" data-route="tips" href="tips.html">Tips &amp; Guides</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============================================================
+         HOME — HERO
+         ============================================================ -->
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="orb orb-red"></div>
+      <div class="orb orb-orange"></div>
+      <div class="orb orb-blue"></div>
+
+      <!-- Floating chips (desktop only) -->
+      <div class="float-chip" style="top: 18%; left: 7%; animation-delay: 0.5s;"><i data-lucide="book-open" width="16"></i> freeCodeCamp</div>
+      <div class="float-chip" style="top: 30%; right: 6%; animation-delay: 1.6s;"><i data-lucide="map" width="16"></i> roadmap.sh</div>
+      <div class="float-chip" style="bottom: 26%; left: 10%; animation-delay: 2.6s;"><i class="bi bi-github"></i> Student Pack</div>
+      <div class="float-chip" style="bottom: 34%; right: 9%; animation-delay: 3.4s;"><i data-lucide="palette" width="16"></i> Figma for Students</div>
+
+      <div class="container position-relative text-center" style="z-index: 3;">
+        <span class="hero-badge reveal visible"><span class="dot"></span> 100% free — curated by &amp; for Tunisian students</span>
+        <h1 class="hero-title mt-4">
+          Your IT Journey<br /><span class="gradient-text">Starts Here</span>&nbsp;<i data-lucide="rocket" width="44" style="color: var(--accent); vertical-align: baseline;"></i>
+        </h1>
+        <p class="hero-sub">
+          The free, community-driven library of courses, tools, roadmaps and real-world advice —
+          curated specifically for Tunisian IT students. No paywalls. No fluff. Just your next step.
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="resources.html" class="btn btn-primary btn-lg px-4">Explore Resources <i data-lucide="arrow-right" width="17"></i></a>
+          <a href="roadmaps.html" class="btn btn-ghost-light btn-lg px-4"><i data-lucide="map" width="17"></i> View Roadmaps</a>
+        </div>
+
+        <!-- Technology marquee -->
+        <div class="marquee">
+          <div class="marquee-track">
+            <span class="tech-pill">HTML &amp; CSS</span><span class="tech-pill">JavaScript</span><span class="tech-pill">Python</span><span class="tech-pill">React</span><span class="tech-pill">Node.js</span><span class="tech-pill">SQL</span><span class="tech-pill">Git</span><span class="tech-pill">Docker</span><span class="tech-pill">Figma</span><span class="tech-pill">Linux</span><span class="tech-pill">Java</span><span class="tech-pill">C++</span><span class="tech-pill">Flutter</span><span class="tech-pill">TensorFlow</span><span class="tech-pill">AWS</span>
+            <span class="tech-pill">HTML &amp; CSS</span><span class="tech-pill">JavaScript</span><span class="tech-pill">Python</span><span class="tech-pill">React</span><span class="tech-pill">Node.js</span><span class="tech-pill">SQL</span><span class="tech-pill">Git</span><span class="tech-pill">Docker</span><span class="tech-pill">Figma</span><span class="tech-pill">Linux</span><span class="tech-pill">Java</span><span class="tech-pill">C++</span><span class="tech-pill">Flutter</span><span class="tech-pill">TensorFlow</span><span class="tech-pill">AWS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint"><span>Scroll</span><span class="bar"></span></div>
+    </section>
+
+    <!-- ============================================================
+         HOME — STATS
+         ============================================================ -->
+    <section class="page-section tight" id="statsHome">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-6 col-lg-3 stat-item reveal">
+            <div class="stat-icon"><i data-lucide="layers" width="21"></i></div>
+            <div class="stat-num"><span class="counter" data-target="100">0</span><span class="plus">+</span></div>
+            <div class="text-muted-custom fw-semibold" style="font-size:0.9rem;">Curated Resources</div>
+          </div>
+          <div class="col-6 col-lg-3 stat-item reveal d1">
+            <div class="stat-icon"><i data-lucide="presentation" width="21"></i></div>
+            <div class="stat-num"><span class="counter" data-target="50">0</span><span class="plus">+</span></div>
+            <div class="text-muted-custom fw-semibold" style="font-size:0.9rem;">YouTube Channels</div>
+          </div>
+          <div class="col-6 col-lg-3 stat-item reveal d2">
+            <div class="stat-icon"><i data-lucide="wrench" width="21"></i></div>
+            <div class="stat-num"><span class="counter" data-target="40">0</span><span class="plus">+</span></div>
+            <div class="text-muted-custom fw-semibold" style="font-size:0.9rem;">Coding &amp; AI Tools</div>
+          </div>
+          <div class="col-6 col-lg-3 stat-item reveal d3">
+            <div class="stat-icon"><i data-lucide="map" width="21"></i></div>
+            <div class="stat-num"><span class="counter" data-target="7">0</span></div>
+            <div class="text-muted-custom fw-semibold" style="font-size:0.9rem;">Career Roadmaps</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HOME — EXPLORE THE HUB
+         ============================================================ -->
+    <section class="page-section" style="background: var(--surface-2);">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <span class="kicker justify-content-center">Explore the hub</span>
+          <h2 class="fw-bold mt-2" style="font-size: clamp(1.7rem, 3.4vw, 2.4rem); letter-spacing: -0.02em;">Everything you need, <span class="gradient-text">in one place</span></h2>
+          <p class="text-muted-custom mt-2 mx-auto" style="max-width: 560px;">Four sections built around a Tunisian IT student's real needs — from first line of code to first job offer.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3 reveal">
+            <div class="card explore-card lift p-4">
+              <div class="chip chip-platforms mb-3"><i data-lucide="compass"></i></div>
+              <h5 class="fw-bold">Resources</h5>
+              <p class="text-muted-custom" style="font-size: 0.9rem;">The hand-picked library: books, channels, tools and platforms actually worth your time.</p>
+              <a href="resources.html" class="arrow-link stretched-link mt-auto">Browse library <i data-lucide="arrow-right" width="15"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3 reveal d1">
+            <div class="card explore-card lift p-4">
+              <div class="chip chip-red mb-3"><i data-lucide="map"></i></div>
+              <h5 class="fw-bold">Roadmaps</h5>
+              <p class="text-muted-custom" style="font-size: 0.9rem;">Seven proven paths from "Hello World" to hired — powered by roadmap.sh.</p>
+              <a href="roadmaps.html" class="arrow-link stretched-link mt-auto">Pick a path <i data-lucide="arrow-right" width="15"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3 reveal d2">
+            <div class="card explore-card lift p-4">
+              <div class="chip chip-teal mb-3"><i data-lucide="users"></i></div>
+              <h5 class="fw-bold">Tunisia Corner</h5>
+              <p class="text-muted-custom" style="font-size: 0.9rem;">Communities, clubs and local tech creators to grow with — right here at home.</p>
+              <a href="tunisia.html" class="arrow-link stretched-link mt-auto">Meet the community <i data-lucide="arrow-right" width="15"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3 reveal d3">
+            <div class="card explore-card lift p-4">
+              <div class="chip chip-orange mb-3"><i data-lucide="lightbulb"></i></div>
+              <h5 class="fw-bold">Tips &amp; Guides</h5>
+              <p class="text-muted-custom" style="font-size: 0.9rem;">Real advice on university, internships, your PFE and freelancing in Tunisia.</p>
+              <a href="tips.html" class="arrow-link stretched-link mt-auto">Read guides <i data-lucide="arrow-right" width="15"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HOME — WHY TUNDEV
+         ============================================================ -->
+    <section class="page-section">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <span class="kicker justify-content-center">Why TunDev</span>
+          <h2 class="fw-bold mt-2" style="font-size: clamp(1.7rem, 3.4vw, 2.4rem); letter-spacing: -0.02em;">Built different, <span class="gradient-text">on purpose</span></h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4 reveal">
+            <div class="card why-card lift">
+              <div class="chip chip-red"><i data-lucide="list-checks" width="26"></i></div>
+              <h5 class="fw-bold">Curated</h5>
+              <p class="text-muted-custom mb-0" style="font-size: 0.92rem;">Every link is tested and vetted by students who used it. If it's outdated, bloated or hidden behind a paywall — it's out.</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal d1">
+            <div class="card why-card lift">
+              <div class="chip chip-teal"><i data-lucide="map-pin" width="26"></i></div>
+              <h5 class="fw-bold">Local</h5>
+              <p class="text-muted-custom mb-0" style="font-size: 0.92rem;">Built around the Tunisian curriculum, job market and student reality — the stages, the PFE, the companies — not Silicon Valley's.</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal d2">
+            <div class="card why-card lift">
+              <div class="chip chip-purple"><i data-lucide="gift" width="26"></i></div>
+              <h5 class="fw-bold">Free</h5>
+              <p class="text-muted-custom mb-0" style="font-size: 0.92rem;">100% free, forever, no sign-up required. Student budgets are hard enough without another subscription.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HOME — CTA BANNER
+         ============================================================ -->
+    <section class="page-section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div class="row align-items-center g-4 position-relative" style="z-index: 2;">
+            <div class="col-lg-8">
+              <h3 class="fw-bold mb-2" style="font-size: clamp(1.4rem, 2.6vw, 1.9rem);">Know a hidden gem we missed?</h3>
+              <p class="mb-0" style="color: rgba(255,255,255,0.82); max-width: 560px;">TunDev grows with the community. Suggest a course, channel or tool — if it helped you, it will help hundreds of students after you.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <!-- External: Google Form -->
+              <a href="https://forms.gle/tundev-suggest" target="_blank" rel="noopener noreferrer" class="btn btn-light btn-lg px-4 fw-bold text-danger">
+                Suggest a Resource <i data-lucide="arrow-up-right" width="17"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       SHARED FOOTER
+       ============================================================ -->
+  <footer class="footer pt-5">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <!-- Column 1: About -->
+        <div class="col-md-5 col-lg-5">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <svg class="flag-mark" viewBox="0 0 32 32" aria-hidden="true">
+              <circle cx="16" cy="16" r="15" fill="#E63946"/>
+              <circle cx="16" cy="16" r="8.6" fill="#fff"/>
+              <path fill="#E63946" d="M15 12.2a3.9 3.9 0 1 0 0 7.6 4.6 4.6 0 0 1 0-7.6zm2.8 1.5l.9 1.7 1.9.2-1.4 1.3.4 1.9-1.7-1-1.7 1 .4-1.9-1.4-1.3 1.9-.2z"/>
+            </svg>
+            <span class="brand-text text-white">Tun<em style="color: var(--accent);">Dev</em></span>
+          </div>
+          <h6>About TunDev</h6>
+          <p style="font-size: 0.9rem; max-width: 380px;">
+            A free, community-driven resource hub built by Tunisian IT students, for Tunisian IT students.
+            We collect the courses, tools, roadmaps and local advice that actually move you forward —
+            so the next generation starts one step ahead of where we did.
+          </p>
+        </div>
+        <!-- Column 2: Quick links (internal) -->
+        <div class="col-6 col-md-3 col-lg-3 offset-lg-1">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled quick-links" style="font-size: 0.92rem; line-height: 2;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="roadmaps.html">Roadmaps</a></li>
+            <li><a href="tunisia.html">Tunisia</a></li>
+            <li><a href="tips.html">Tips &amp; Guides</a></li>
+          </ul>
+        </div>
+        <!-- Column 3: Contact (external) -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <h6>Contact</h6>
+          <a class="contact-line" href="mailto:contact@tundev.tn" target="_blank" rel="noopener noreferrer"><i data-lucide="mail"></i> contact@tundev.tn</a>
+          <a class="contact-line" href="https://github.com/TunDev" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> github.com/TunDev</a>
+          <a class="contact-line" href="https://www.linkedin.com/company/tundev" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> /company/tundev</a>
+          <a href="https://forms.gle/tundev-suggest" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm mt-2">
+            Suggest a Resource <i data-lucide="arrow-up-right" width="13"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Bottom bar -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-center align-items-center gap-1 gap-md-3 py-3 text-center">
+        <span>Made with
+          <svg class="heart" width="14" height="14" viewBox="0 0 24 24" fill="#E63946" style="vertical-align: -2px;" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          in Tunisia
+        </span>
+        <span class="d-none d-md-inline" style="opacity: 0.35;">|</span>
+        <span>© 2025 TunDev — For students, by students</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="toTop" aria-label="Back to top" title="Back to top"><i data-lucide="arrow-up" width="19"></i></button>
+</body>
+</html>

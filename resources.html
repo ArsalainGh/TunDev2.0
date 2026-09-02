@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The TunDev Resource Vault — 36 hand-picked books, YouTube channels, platforms, tools and AI apps for Tunisian IT students." />
+  <title>Resources · TunDev</title>
+
+  <!-- Favicon: simplified Tunisian flag -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="%23E63946"/><circle cx="50" cy="50" r="27" fill="white"/><circle cx="47" cy="50" r="16" fill="%23E63946"/><circle cx="52" cy="50" r="13" fill="white"/></svg>' />
+
+  <!-- Google Fonts: Poppins (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 + Bootstrap Icons via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Shared TunDev styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Scripts (deferred, execute in order after HTML parse) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <!-- ============================================================
+       SHARED NAVBAR
+       ============================================================ -->
+  <nav class="navbar navbar-expand-lg navbar-tundev sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 me-lg-4" href="index.html" aria-label="TunDev home">
+        <svg class="flag-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="15" fill="#E63946"/>
+          <circle cx="16" cy="16" r="8.6" fill="#fff"/>
+          <path fill="#E63946" d="M15 12.2a3.9 3.9 0 1 0 0 7.6 4.6 4.6 0 0 1 0-7.6zm2.8 1.5l.9 1.7 1.9.2-1.4 1.3.4 1.9-1.7-1-1.7 1 .4-1.9-1.4-1.3 1.9-.2z"/>
+        </svg>
+        <span class="brand-text">Tun<em>Dev</em></span>
+      </a>
+      <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <i data-lucide="moon" class="icon-moon" width="18"></i>
+          <i data-lucide="sun" class="icon-sun" width="18"></i>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation" style="border-color: var(--border);">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse order-lg-2" id="navContent">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0 gap-lg-1">
+          <li class="nav-item"><a class="nav-link" data-route="home" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" data-route="resources" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" data-route="roadmaps" href="roadmaps.html">Roadmaps</a></li>
+          <li class="nav-item"><a class="nav-link" data-route="tunisia" href="tunisia.html">Tunisia</a></li>
+          <li class="nav-item"><a class="nav-link" data-route="tips" href="tips.html">Tips &amp; Guides</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============================================================
+         RESOURCES — PAGE HEADER
+         ============================================================ -->
+    <header class="page-head">
+      <div class="container">
+        <span class="kicker">The library</span>
+        <h1 class="fw-bold mt-2" style="font-size: clamp(2rem, 4.5vw, 3rem); letter-spacing: -0.02em;">The Resource <span class="gradient-text">Vault</span></h1>
+        <p class="text-muted-custom mt-2 mb-0" style="max-width: 640px;"><span id="resTotal">36</span> hand-picked resources across 9 categories — every single one tested by Tunisian students. Filter, search, and steal our homework.</p>
+      </div>
+    </header>
+
+    <section class="page-section tight">
+      <div class="container">
+        <!-- Filter pills + search -->
+        <div class="row g-3 align-items-center mb-4">
+          <div class="col-lg-8">
+            <div class="filter-bar" id="resFilters">
+              <button class="filter-pill active" data-filter="all">All</button>
+              <button class="filter-pill" data-filter="books">Books</button>
+              <button class="filter-pill" data-filter="youtube">YouTube</button>
+              <button class="filter-pill" data-filter="platforms">Platforms</button>
+              <button class="filter-pill" data-filter="coding">Coding Tools</button>
+              <button class="filter-pill" data-filter="design">Design</button>
+              <button class="filter-pill" data-filter="resume">Resume</button>
+              <button class="filter-pill" data-filter="presentation">Presentation</button>
+              <button class="filter-pill" data-filter="planning">Planning</button>
+              <button class="filter-pill" data-filter="ai">AI Tools</button>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="search-wrap">
+              <i data-lucide="search"></i>
+              <input type="search" id="resSearch" placeholder="Search resources…" aria-label="Search resources" />
+            </div>
+          </div>
+        </div>
+        <p class="text-muted-custom mb-4" style="font-size: 0.85rem;">Showing <strong id="resCount" style="color: var(--primary);">36</strong> resources</p>
+
+        <!-- Resource grid (3 per row on desktop, 1 on mobile) -->
+        <div class="row g-4" id="resGrid">
+
+          <!-- BOOKS -->
+          <div class="col-md-6 col-lg-4 resource-item" data-category="books" data-search="python programming automate tasks al sweigart beginners scripting">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-books"><i data-lucide="book-open"></i></span>
+                <span class="bsoft b-cat">Books</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Automate the Boring Stuff with Python</h3>
+              <p class="card-desc mb-3">The friendliest intro to Python ever written — learn by automating real everyday tasks. Free to read online.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-beg">Beginner</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://automatetheboringstuff.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="books" data-search="javascript eloquent marijn haverbeke deep modern js">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-books"><i data-lucide="book-open"></i></span>
+                <span class="bsoft b-cat">Books</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Eloquent JavaScript</h3>
+              <p class="card-desc mb-3">A modern deep-dive into JavaScript and the art of programming, with exercises and projects in every chapter.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-int">Intermediate</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://eloquentjavascript.net/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="books" data-search="you dont know js kyle simpson closures scope advanced javascript github">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-books"><i data-lucide="book-open"></i></span>
+                <span class="bsoft b-cat">Books</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">You Don't Know JS Yet</h3>
+              <p class="card-desc mb-3">The legendary series that takes you past tutorials into how JavaScript really works. Free on GitHub.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-adv">Advanced</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://github.com/getify/You-Dont-Know-JS" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="books" data-search="clean code robert martin uncle bob craftsmanship naming functions refactoring">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-books"><i data-lucide="book-open"></i></span>
+                <span class="bsoft b-cat">Books</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Clean Code — Robert C. Martin</h3>
+              <p class="card-desc mb-3">The classic every software company expects you to know. Read it before your PFE, thank us at the defense.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-adv">Advanced</span><span class="bsoft b-paid">Paid</span></div>
+              <a href="https://www.oreilly.com/library/view/clean-code-a/9780136083238/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <!-- YOUTUBE -->
+          <div class="col-md-6 col-lg-4 resource-item" data-category="youtube" data-search="freecodecamp youtube full courses python javascript html long form certifications">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-youtube"><i data-lucide="youtube"></i></span>
+                <span class="bsoft b-cat">YouTube</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">freeCodeCamp.org</h3>
+              <p class="card-desc mb-3">Full-length university-grade courses — a 4-hour Python bootcamp here replaces a whole semester of confusion.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-all">All levels</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://www.youtube.com/@freecodecamp" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="youtube" data-search="traversy media crash courses web dev html css javascript react node practical">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-youtube"><i data-lucide="youtube"></i></span>
+                <span class="bsoft b-cat">YouTube</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Traversy Media</h3>
+              <p class="card-desc mb-3">The king of crash courses. Brad's 1-hour "build it with me" videos are the fastest way to taste any web tech.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-beg">Beginner</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://www.youtube.com/@TraversyMedia" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="youtube" data-search="elzero web school arabic osama elzero html css javascript frontend assignments">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-youtube"><i data-lucide="youtube"></i></span>
+                <span class="bsoft b-cat">YouTube</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Elzero Web School</h3>
+              <p class="card-desc mb-3">Web development taught in Arabic with clear study plans and assignments after every topic. The #1 pick for Arabic-speaking students.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-ar">AR</span><span class="bsoft b-beg">Beginner</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://www.youtube.com/@ElzeroWebSchool" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="youtube" data-search="codezilla arabic python programming egyptian humor projects beginners">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-youtube"><i data-lucide="youtube"></i></span>
+                <span class="bsoft b-cat">YouTube</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Codezilla</h3>
+              <p class="card-desc mb-3">Python and programming fundamentals explained in Arabic with humor and real mini-projects. Perfect if English videos feel heavy at first.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-ar">AR</span><span class="bsoft b-beg">Beginner</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://www.youtube.com/@codezilla" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="youtube" data-search="grafikart french francais php javascript laravel frontend tutoriels">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-youtube"><i data-lucide="youtube"></i></span>
+                <span class="bsoft b-cat">YouTube</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Grafikart</h3>
+              <p class="card-desc mb-3">French-language deep dives into PHP, JavaScript, Laravel and modern frontend — serious, structured content for francophone students.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-fr">FR</span><span class="bsoft b-int">Intermediate</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://www.youtube.com/@grafikart" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <!-- PLATFORMS -->
+          <div class="col-md-6 col-lg-4 resource-item" data-category="platforms" data-search="freecodecamp certifications responsive web design javascript python data analysis interactive curriculum">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-platforms"><i data-lucide="monitor"></i></span>
+                <span class="bsoft b-cat">Platforms</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">freeCodeCamp</h3>
+              <p class="card-desc mb-3">Free interactive certifications in web dev, Python and data analysis — you code directly in the browser, no setup needed.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-beg">Beginner</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="platforms" data-search="odin project full stack curriculum ruby javascript open source projects portfolio">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-platforms"><i data-lucide="monitor"></i></span>
+                <span class="bsoft b-cat">Platforms</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">The Odin Project</h3>
+              <p class="card-desc mb-3">A complete open-source full-stack curriculum that forces you to build real projects — and leaves you with a portfolio.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-int">Intermediate</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://www.theodinproject.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="platforms" data-search="cs50 harvard computer science introduction david malan c algorithms problem sets">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-platforms"><i data-lucide="monitor"></i></span>
+                <span class="bsoft b-cat">Platforms</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Harvard CS50</h3>
+              <p class="card-desc mb-3">The legendary intro to computer science. Do it in your first year and every Tunisian course will feel easier afterwards.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-beg">Beginner</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="platforms" data-search="leetcode algorithms data structures interview preparation problems contests">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-platforms"><i data-lucide="monitor"></i></span>
+                <span class="bsoft b-cat">Platforms</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">LeetCode</h3>
+              <p class="card-desc mb-3">Where technical interviews are won. Start with the easy problems in third year — future you will be grateful.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-int">Intermediate</span><span class="bsoft b-freemium">Freemium</span></div>
+              <a href="https://leetcode.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="platforms" data-search="hackerrank practice certificates skills verification sql python java problem solving">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-platforms"><i data-lucide="monitor"></i></span>
+                <span class="bsoft b-cat">Platforms</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">HackerRank</h3>
+              <p class="card-desc mb-3">Practice coding by language and earn free skill certificates you can actually list on your CV and LinkedIn.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-beg">Beginner</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://www.hackerrank.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="platforms" data-search="mdn web docs mozilla html css javascript reference documentation browser apis">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-platforms"><i data-lucide="monitor"></i></span>
+                <span class="bsoft b-cat">Platforms</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">MDN Web Docs</h3>
+              <p class="card-desc mb-3">The reference for HTML, CSS and JavaScript. When a random blog and MDN disagree, MDN is right.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-all">All levels</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <!-- CODING TOOLS -->
+          <div class="col-md-6 col-lg-4 resource-item" data-category="coding" data-search="visual studio code editor vs code extensions ide microsoft free">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-coding"><i data-lucide="terminal"></i></span>
+                <span class="bsoft b-cat">Coding Tools</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Visual Studio Code</h3>
+              <p class="card-desc mb-3">The editor used by roughly everyone in every Tunisian tech company. Install it on day one, master the shortcuts by week two.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-all">All levels</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="coding" data-search="git version control commit branch merge scm book pro git">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-coding"><i data-lucide="terminal"></i></span>
+                <span class="bsoft b-cat">Coding Tools</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Git + the free Pro Git book</h3>
+              <p class="card-desc mb-3">Version control is non-negotiable for internships and PFE teamwork. Learn it now, not the night before your first demo.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-beg">Beginner</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://git-scm.com/book" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="coding" data-search="github student developer pack copilot free domain namecheap credits digitalocean azure">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-coding"><i data-lucide="terminal"></i></span>
+                <span class="bsoft b-cat">Coding Tools</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">GitHub Student Developer Pack</h3>
+              <p class="card-desc mb-3">Copilot, cloud credits, a free domain and 100+ pro tools — free with your university email. The single best deal in student tech.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-all">All levels</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="coding" data-search="postman api testing rest requests collections backend development">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-coding"><i data-lucide="terminal"></i></span>
+                <span class="bsoft b-cat">Coding Tools</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Postman</h3>
+              <p class="card-desc mb-3">Test and document APIs without writing a frontend first. Your PFE backend will thank you during the live demo.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-int">Intermediate</span><span class="bsoft b-freemium">Freemium</span></div>
+              <a href="https://www.postman.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="coding" data-search="docker containers devops deployment images compose virtualization">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-coding"><i data-lucide="terminal"></i></span>
+                <span class="bsoft b-cat">Coding Tools</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Docker</h3>
+              <p class="card-desc mb-3">"It works on my machine" stops being an excuse. Containerize your PFE and watch the jury's eyebrows rise.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-adv">Advanced</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <!-- DESIGN -->
+          <div class="col-md-6 col-lg-4 resource-item" data-category="design" data-search="figma ui ux design prototyping free education plan students wireframe">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-design"><i data-lucide="palette"></i></span>
+                <span class="bsoft b-cat">Design</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Figma</h3>
+              <p class="card-desc mb-3">The industry-standard UI/UX tool. Students get the professional plan free — mock up your PFE before you code it.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-beg">Beginner</span><span class="bsoft b-freemium">Freemium</span></div>
+              <a href="https://www.figma.com/education/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="design" data-search="canva quick graphics posters social media cv templates presentations">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-design"><i data-lucide="palette"></i></span>
+                <span class="bsoft b-cat">Design</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Canva</h3>
+              <p class="card-desc mb-3">Club posters, CV visuals and slide decks in minutes. Not a Photoshop replacement — a deadline replacement.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-fr">FR</span><span class="bsoft b-beg">Beginner</span><span class="bsoft b-freemium">Freemium</span></div>
+              <a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="design" data-search="coolors color palette generator scheme branding colors">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-design"><i data-lucide="palette"></i></span>
+                <span class="bsoft b-cat">Design</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Coolors</h3>
+              <p class="card-desc mb-3">Generate a professional color palette in five seconds. Lock one color, spacebar for the rest, export and go.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-all">All levels</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://coolors.co/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="design" data-search="undraw free illustrations svg open source projects websites customizable color">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-design"><i data-lucide="palette"></i></span>
+                <span class="bsoft b-cat">Design</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">unDraw</h3>
+              <p class="card-desc mb-3">Beautiful open-source illustrations you can recolor to match your project — no attribution needed, full student budget approved.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-all">All levels</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://undraw.co/illustrations" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <!-- RESUME -->
+          <div class="col-md-6 col-lg-4 resource-item" data-category="resume" data-search="flowcv cv resume builder ats friendly one page free templates">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-resume"><i data-lucide="file-text"></i></span>
+                <span class="bsoft b-cat">Resume</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">FlowCV</h3>
+              <p class="card-desc mb-3">Clean, ATS-friendly resumes with a genuinely free PDF download. Ideal for that one-page stage application.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-fr">FR</span><span class="bsoft b-all">All levels</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://flowcv.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="resume" data-search="reactive resume open source rxresume builder privacy">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-resume"><i data-lucide="file-text"></i></span>
+                <span class="bsoft b-cat">Resume</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Reactive Resume</h3>
+              <p class="card-desc mb-3">A free, open-source, privacy-first resume builder with real-time editing and multilingual support.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-all">All levels</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://rxresu.me/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="resume" data-search="latex overleaf cv templates academic moderncv awesome-cv research masters applications">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-resume"><i data-lucide="file-text"></i></span>
+                <span class="bsoft b-cat">Resume</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Overleaf LaTeX CV Templates</h3>
+              <p class="card-desc mb-3">Sharp academic CVs for master's and exchange applications abroad. Looks incredibly serious next to a Word resume.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-int">Intermediate</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://www.overleaf.com/gallery/tagged/cv" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <!-- PRESENTATION -->
+          <div class="col-md-6 col-lg-4 resource-item" data-category="presentation" data-search="google slides collaborative slides presentation teamwork cloud">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-presentation"><i data-lucide="presentation"></i></span>
+                <span class="bsoft b-cat">Presentation</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Google Slides</h3>
+              <p class="card-desc mb-3">Collaborative slides that live in the cloud — no more "version_finale_v3_FINAL.pptx" in the group chat.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-fr">FR</span><span class="bsoft b-all">All levels</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://slides.google.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="presentation" data-search="slidesgo templates free google slides powerpoint themes education">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-presentation"><i data-lucide="presentation"></i></span>
+                <span class="bsoft b-cat">Presentation</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Slidesgo</h3>
+              <p class="card-desc mb-3">Free, well-designed slide templates — instantly upgrades every class presentation and PFE defense deck.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-all">All levels</span><span class="bsoft b-freemium">Freemium</span></div>
+              <a href="https://slidesgo.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="presentation" data-search="gamma ai presentation generator decks docs quick">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-presentation"><i data-lucide="presentation"></i></span>
+                <span class="bsoft b-cat">Presentation</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Gamma</h3>
+              <p class="card-desc mb-3">Paste your outline, get a polished deck. Great for drafts — always review the content before you present it.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-beg">Beginner</span><span class="bsoft b-freemium">Freemium</span></div>
+              <a href="https://gamma.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <!-- PLANNING -->
+          <div class="col-md-6 col-lg-4 resource-item" data-category="planning" data-search="notion student plus plan notes documentation dashboard organization wiki">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-planning"><i data-lucide="calendar-check"></i></span>
+                <span class="bsoft b-cat">Planning</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Notion</h3>
+              <p class="card-desc mb-3">Notes, PFE documentation and semester dashboards in one place. The Plus plan is free with your university email.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-all">All levels</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://www.notion.so/students" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="planning" data-search="trello kanban boards sprint pfe tasks team project management atlassian">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-planning"><i data-lucide="calendar-check"></i></span>
+                <span class="bsoft b-cat">Planning</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Trello</h3>
+              <p class="card-desc mb-3">Dead-simple Kanban boards for PFE sprints and group projects. To do, doing, done — that's the whole course.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-fr">FR</span><span class="bsoft b-beg">Beginner</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://trello.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <!-- AI TOOLS -->
+          <div class="col-md-6 col-lg-4 resource-item" data-category="ai" data-search="chatgpt openai assistant explain debug study rewrite">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-ai"><i data-lucide="sparkles"></i></span>
+                <span class="bsoft b-cat">AI Tools</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">ChatGPT</h3>
+              <p class="card-desc mb-3">Your 24/7 study buddy: explain a concept three different ways, debug code, rehearse interview answers. Verify before you cite.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-all">All levels</span><span class="bsoft b-freemium">Freemium</span></div>
+              <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="ai" data-search="github copilot ai pair programmer autocomplete students free education">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-ai"><i data-lucide="sparkles"></i></span>
+                <span class="bsoft b-cat">AI Tools</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">GitHub Copilot</h3>
+              <p class="card-desc mb-3">AI pair-programming inside VS Code — completely free for verified students via the GitHub Student Pack.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-all">All levels</span><span class="bsoft b-free">Free</span></div>
+              <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="ai" data-search="claude anthropic long documents pfe report writing analysis careful">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-ai"><i data-lucide="sparkles"></i></span>
+                <span class="bsoft b-cat">AI Tools</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Claude</h3>
+              <p class="card-desc mb-3">Excellent at long documents and careful explanation — a strong ally when structuring an 80-page PFE report.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-fr">FR</span><span class="bsoft b-all">All levels</span><span class="bsoft b-freemium">Freemium</span></div>
+              <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 resource-item" data-category="ai" data-search="perplexity ai search sources citations research bibliography">
+            <div class="card resource-card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <span class="chip chip-ai"><i data-lucide="sparkles"></i></span>
+                <span class="bsoft b-cat">AI Tools</span>
+              </div>
+              <h3 class="h5 fw-bold mb-1">Perplexity</h3>
+              <p class="card-desc mb-3">AI search that shows its sources — perfect for the "state of the art" chapter of your PFE with links you can cite.</p>
+              <div class="d-flex flex-wrap gap-1 mb-3"><span class="bsoft b-en">EN</span><span class="bsoft b-all">All levels</span><span class="bsoft b-freemium">Freemium</span></div>
+              <a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm visit-btn mt-auto align-self-start">Visit <i data-lucide="arrow-up-right" width="14"></i></a>
+            </div>
+          </div>
+
+        </div><!-- /#resGrid -->
+
+        <!-- Empty state (shown when filters match nothing) -->
+        <div id="noResults" class="text-center py-5 d-none">
+          <div class="stat-icon mx-auto"><i data-lucide="search" width="20"></i></div>
+          <h5 class="fw-bold mt-2">Nothing found</h5>
+          <p class="text-muted-custom mb-3">No resource matches your current filter and search.</p>
+          <button class="btn btn-outline-primary btn-sm" id="resetFilters">Reset filters</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       SHARED FOOTER
+       ============================================================ -->
+  <footer class="footer pt-5">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-md-5 col-lg-5">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <svg class="flag-mark" viewBox="0 0 32 32" aria-hidden="true">
+              <circle cx="16" cy="16" r="15" fill="#E63946"/>
+              <circle cx="16" cy="16" r="8.6" fill="#fff"/>
+              <path fill="#E63946" d="M15 12.2a3.9 3.9 0 1 0 0 7.6 4.6 4.6 0 0 1 0-7.6zm2.8 1.5l.9 1.7 1.9.2-1.4 1.3.4 1.9-1.7-1-1.7 1 .4-1.9-1.4-1.3 1.9-.2z"/>
+            </svg>
+            <span class="brand-text text-white">Tun<em style="color: var(--accent);">Dev</em></span>
+          </div>
+          <h6>About TunDev</h6>
+          <p style="font-size: 0.9rem; max-width: 380px;">
+            A free, community-driven resource hub built by Tunisian IT students, for Tunisian IT students.
+            We collect the courses, tools, roadmaps and local advice that actually move you forward —
+            so the next generation starts one step ahead of where we did.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3 offset-lg-1">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled quick-links" style="font-size: 0.92rem; line-height: 2;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="roadmaps.html">Roadmaps</a></li>
+            <li><a href="tunisia.html">Tunisia</a></li>
+            <li><a href="tips.html">Tips &amp; Guides</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <h6>Contact</h6>
+          <a class="contact-line" href="mailto:contact@tundev.tn" target="_blank" rel="noopener noreferrer"><i data-lucide="mail"></i> contact@tundev.tn</a>
+          <a class="contact-line" href="https://github.com/TunDev" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> github.com/TunDev</a>
+          <a class="contact-line" href="https://www.linkedin.com/company/tundev" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> /company/tundev</a>
+          <a href="https://forms.gle/tundev-suggest" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm mt-2">
+            Suggest a Resource <i data-lucide="arrow-up-right" width="13"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-center align-items-center gap-1 gap-md-3 py-3 text-center">
+        <span>Made with
+          <svg class="heart" width="14" height="14" viewBox="0 0 24 24" fill="#E63946" style="vertical-align: -2px;" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          in Tunisia
+        </span>
+        <span class="d-none d-md-inline" style="opacity: 0.35;">|</span>
+        <span>© 2025 TunDev — For students, by students</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="toTop" aria-label="Back to top" title="Back to top"><i data-lucide="arrow-up" width="19"></i></button>
+</body>
+</html>

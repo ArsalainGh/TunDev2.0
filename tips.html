@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tips & Guides for Tunisian IT students — PFE survival guide, internships, LinkedIn, freelancing payments and studying abroad." />
+  <title>Tips &amp; Guides · TunDev</title>
+
+  <!-- Favicon: simplified Tunisian flag -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="%23E63946"/><circle cx="50" cy="50" r="27" fill="white"/><circle cx="47" cy="50" r="16" fill="%23E63946"/><circle cx="52" cy="50" r="13" fill="white"/></svg>' />
+
+  <!-- Google Fonts: Poppins (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 + Bootstrap Icons via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Shared TunDev styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Scripts (deferred, execute in order after HTML parse) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <!-- ============================================================
+       SHARED NAVBAR
+       ============================================================ -->
+  <nav class="navbar navbar-expand-lg navbar-tundev sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 me-lg-4" href="index.html" aria-label="TunDev home">
+        <svg class="flag-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="15" fill="#E63946"/>
+          <circle cx="16" cy="16" r="8.6" fill="#fff"/>
+          <path fill="#E63946" d="M15 12.2a3.9 3.9 0 1 0 0 7.6 4.6 4.6 0 0 1 0-7.6zm2.8 1.5l.9 1.7 1.9.2-1.4 1.3.4 1.9-1.7-1-1.7 1 .4-1.9-1.4-1.3 1.9-.2z"/>
+        </svg>
+        <span class="brand-text">Tun<em>Dev</em></span>
+      </a>
+      <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <i data-lucide="moon" class="icon-moon" width="18"></i>
+          <i data-lucide="sun" class="icon-sun" width="18"></i>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation" style="border-color: var(--border);">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse order-lg-2" id="navContent">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0 gap-lg-1">
+          <li class="nav-item"><a class="nav-link" data-route="home" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" data-route="resources" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" data-route="roadmaps" href="roadmaps.html">Roadmaps</a></li>
+          <li class="nav-item"><a class="nav-link" data-route="tunisia" href="tunisia.html">Tunisia</a></li>
+          <li class="nav-item"><a class="nav-link" data-route="tips" href="tips.html">Tips &amp; Guides</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============================================================
+         TIPS & GUIDES — PAGE HEADER
+         ============================================================ -->
+    <header class="page-head">
+      <div class="container">
+        <span class="kicker">The field manual</span>
+        <h1 class="fw-bold mt-2" style="font-size: clamp(2rem, 4.5vw, 3rem); letter-spacing: -0.02em;">Tips &amp; <span class="gradient-text">Guides</span></h1>
+        <p class="text-muted-custom mt-2 mb-0" style="max-width: 640px;">Hard-won lessons about university, internships, your PFE and going freelance — written for the Tunisian context, not copied from an American blog.</p>
+      </div>
+    </header>
+
+    <section class="page-section tight">
+      <div class="container">
+        <!-- Filter pills -->
+        <div class="filter-bar mb-5" id="tipFilters">
+          <button class="filter-pill active" data-tfilter="all">All</button>
+          <button class="filter-pill" data-tfilter="university">University</button>
+          <button class="filter-pill" data-tfilter="career">Career</button>
+          <button class="filter-pill" data-tfilter="technical">Technical</button>
+          <button class="filter-pill" data-tfilter="pfe">PFE</button>
+          <button class="filter-pill" data-tfilter="freelancing">Freelancing</button>
+        </div>
+
+        <!-- ============ FEATURED: THE PFE GUIDE ============ -->
+        <div class="card pfe-feature lift p-4 p-lg-5 mb-5 tip-item" data-tcat="pfe">
+          <div class="row align-items-center mb-4 g-3">
+            <div class="col-lg-8">
+              <span class="bsoft b-pfe mb-2">Featured guide</span>
+              <h2 class="fw-bold mt-2 mb-2" style="font-size: clamp(1.4rem, 3vw, 2rem);">The Complete <span class="gradient-text">PFE Survival Guide</span></h2>
+              <p class="text-muted-custom mb-0" style="max-width: 560px;">Your Projet de Fin d'Études is the single biggest deliverable of your studies — and the project recruiters will ask about first. Here is everything seniors wish someone had told them, in order.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <div class="chip chip-red ms-lg-auto" style="width: 72px; height: 72px;"><i data-lucide="graduation-cap" width="34"></i></div>
+            </div>
+          </div>
+
+          <div class="accordion" id="pfeAccordion">
+            <!-- 1. Choosing your topic -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pfe1" aria-expanded="true">1. How to choose your topic</button>
+              </h3>
+              <div id="pfe1" class="accordion-collapse collapse show" data-bs-parent="#pfeAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li><strong>Solve a real company need.</strong> A project with actual users and real data beats a theoretical one at every defense and every job interview.</li>
+                    <li><strong>The 70/30 rule:</strong> build on skills you already have (70%) and add roughly 30% new technology — enough to learn, not enough to drown.</li>
+                    <li><strong>Scope for 4–6 months, solo.</strong> If you can't describe the finished product in two sentences, it's too big. Cut features, not fundamentals.</li>
+                    <li><strong>Avoid the 20th clone.</strong> Another generic "gestion de stock" needs a twist — a forecasting model, a mobile app, an exceptional UX — or the jury has already seen your project 19 times.</li>
+                    <li><strong>Read last year's reports</strong> in your university library to calibrate expectations (and spot topics that are already overdone).</li>
+                    <li><strong>Validate with your supervisor before committing</strong> — changing topics after month one is painful and entirely avoidable.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Finding a supervisor -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pfe2" aria-expanded="false">2. Finding a supervisor</button>
+              </h3>
+              <div id="pfe2" class="accordion-collapse collapse" data-bs-parent="#pfeAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li><strong>Ask early — September to November.</strong> The professors everyone wants fill their quota fast. Waiting until February leaves you with whoever is left.</li>
+                    <li><strong>Choose from courses you did well in.</strong> A professor who already knows your work says yes faster and supervises better.</li>
+                    <li><strong>Come prepared:</strong> two or three one-page topic ideas with the problem, the users and the technologies. "I don't know, what do you have?" is not a strategy.</li>
+                    <li><strong>Two supervisors, two roles:</strong> your company <em>encadrant</em> handles the day-to-day; your academic supervisor validates the methodology and report. Keep both informed.</li>
+                    <li><strong>Fix a meeting rhythm</strong> (every one to two weeks) and send short progress emails. That trail of updates often becomes their evaluation of you.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Timeline & milestones -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pfe3" aria-expanded="false">3. Timeline &amp; milestones</button>
+              </h3>
+              <div id="pfe3" class="accordion-collapse collapse" data-bs-parent="#pfeAccordion">
+                <div class="accordion-body">
+                  <p>A realistic calendar for a February–June PFE (adjust for your institution):</p>
+                  <ul>
+                    <li><strong>Month 1 — Specification:</strong> understand the company, interview users, write the <em>cahier des charges</em>, survey existing solutions, choose technologies with your encadrant.</li>
+                    <li><strong>Month 2 — Analysis &amp; design:</strong> use cases, sequence and class diagrams, database schema, UI mockups (Figma). Lock the scope here.</li>
+                    <li><strong>Months 3–4 — Development:</strong> work in weekly sprints; demo something runnable to your encadrant every sprint, even if it's ugly.</li>
+                    <li><strong>Month 5 — Hardening:</strong> testing, fixing, deployment, user feedback round. No new features — polish what exists.</li>
+                    <li><strong>Month 6 — Report &amp; defense:</strong> finalize the report, prepare slides and demo, rehearse. Soutenances usually run June–July.</li>
+                    <li><strong>Always:</strong> keep a weekly logbook — meeting notes, decisions, blockers. It writes half your report for you.</li>
+                  </ul>
+                  <p class="mb-0"><strong>Warning sign:</strong> if you're still writing code in the last three weeks, your scope was too big. Cut, don't cram.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Writing the report -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pfe4" aria-expanded="false">4. Writing the report</button>
+              </h3>
+              <div id="pfe4" class="accordion-collapse collapse" data-bs-parent="#pfeAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li><strong>Use the official template from day one.</strong> Wrestling with Word styles in the final week is a rite of passage you can simply skip.</li>
+                    <li><strong>Classic structure (60–90 pages):</strong> general introduction → company presentation (keep it short — 2–3 pages, it's not their marketing site) → study of the existing &amp; requirements → analysis (use cases) → design (UML diagrams) → realization (screens with explanations) → conclusion &amp; perspectives.</li>
+                    <li><strong>Write continuously:</strong> 30 minutes every Friday updating the report turns a monster task into a habit.</li>
+                    <li><strong>Tooling:</strong> Word or LaTeX (Overleaf), diagrams.net for UML, LanguageTool for French grammar. Your jury <em>will</em> notice spelling mistakes in chapter titles.</li>
+                    <li><strong>Cite everything you reuse</strong> — diagrams, definitions, datasets. Anti-plagiarism software is standard now; paraphrase and reference instead of copy-pasting.</li>
+                    <li><strong>Get one human proofread</strong> from someone outside your project — fresh eyes catch what yours stopped seeing weeks ago.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Preparing the presentation -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pfe5" aria-expanded="false">5. Preparing the presentation</button>
+              </h3>
+              <div id="pfe5" class="accordion-collapse collapse" data-bs-parent="#pfeAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li><strong>Structure for 15–20 minutes:</strong> context (1 slide) → problem (1) → solution overview (1) → architecture (1–2) → live demo (3–4 minutes — the star of the show) → results &amp; limits (1) → perspectives (1) → thank you.</li>
+                    <li><strong>The demo is king, but prepare for betrayal:</strong> record a backup video, take screenshots of every screen, export your slides to PDF on a USB stick. Wi-Fi fails exactly once per defense day — during yours.</li>
+                    <li><strong>Rehearse out loud at least five times</strong>, twice with a timer, once in front of friends who will ask mean questions.</li>
+                    <li><strong>Prepare the ten classics:</strong> Why this technology? What was hardest? What would you do differently? How does it scale? How is it secured? What did <em>you</em> personally build?</li>
+                    <li><strong>Speak clearly in French</strong> (the usual defense language), answer in the language of the question, and never read your slides — the jury can read faster than you can talk.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Common mistakes -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pfe6" aria-expanded="false">6. Common mistakes to avoid</button>
+              </h3>
+              <div id="pfe6" class="accordion-collapse collapse" data-bs-parent="#pfeAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li><strong>Starting in April</strong> with a June deadline. The students who start in February look relaxed for a reason.</li>
+                    <li><strong>80% features, 20% understanding.</strong> If you can't explain a function in your own code during Q&amp;A, the jury assumes you didn't write it.</li>
+                    <li><strong>Writing the report in the last 10 days.</strong> It always takes twice as long as you think.</li>
+                    <li><strong>A demo that depends on live internet</strong> — or worse, on a teammate's laptop and VPN.</li>
+                    <li><strong>Copy-pasted UML</strong> with wrong notation. One incorrect arrow costs more credibility than three missing diagrams.</li>
+                    <li><strong>Arguing with the jury.</strong> The winning formula is: "That's a great point — here's my reasoning, and here's what I'd improve."</li>
+                    <li><strong>Forgetting the human parts:</strong> acknowledgments, a clean conclusion slide, and thanking your encadrant by name.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ ARTICLES GRID ============ -->
+        <div class="row g-4" id="tipsGrid">
+
+          <!-- Article 1 — University -->
+          <div class="col-md-6 tip-item" data-tcat="university">
+            <div class="card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="bsoft b-uni">University</span>
+                <span class="read-time"><i data-lucide="clock" width="13"></i> 5 min read</span>
+              </div>
+              <h4 class="fw-bold">Your First Year Won't Teach You to Code — and That's Normal</h4>
+              <p class="text-muted-custom" style="font-size: 0.9rem;">Tunisian CS programs are theory-heavy by design. Here's how to use that theory instead of suffering through it.</p>
+              <button class="btn btn-outline-primary btn-sm read-btn align-self-start mt-auto" data-bs-toggle="collapse" data-bs-target="#art1" aria-expanded="false">Read article <i data-lucide="chevron-down" class="chev" width="15"></i></button>
+              <div class="collapse" id="art1">
+                <div class="article-body pt-3 mt-3 border-top">
+                  <p>Whether you're at ISI, ENIT, FST or an ISET, the first year hits everyone the same way: algorithms on paper, C pointers, and more math than you signed up for. Meanwhile YouTube keeps telling you that you should already be building SaaS products.</p>
+                  <p><strong>Both are right.</strong> University gives you the fundamentals — but it rarely teaches you to build. The students who thrive treat it as a two-track education:</p>
+                  <ul>
+                    <li><strong>Track 1 — University (your foundation):</strong> take algorithms and data structures seriously; they're what technical interviews test later. Don't skip the math either — analyse, linear algebra and probability are exactly what AI, graphics and optimization subjects reuse.</li>
+                    <li><strong>Track 2 — Self-study (5 hours a week):</strong> pick <em>one</em> language outside class (Python or JavaScript) and build tiny things weekly. Consistency beats intensity — five focused hours every week destroy a 40-hour cram session before exams.</li>
+                  </ul>
+                  <p><strong>Practical survival tips:</strong> find the class Drive with past exam papers (<em>les annales</em>) — Tunisian professors love their own classics; form a 3–4 person study group before the first DS, not the night before; and join one club (GDG on Campus, IEEE) — the senior who reviews your CV next year is probably in it.</p>
+                  <p class="mb-0"><strong>What to ignore:</strong> the pressure to learn every new framework. Your first two years are for depth, not breadth. Frameworks change yearly; pointers and probability don't.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 2 — Career -->
+          <div class="col-md-6 tip-item" data-tcat="career">
+            <div class="card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="bsoft b-career">Career</span>
+                <span class="read-time"><i data-lucide="clock" width="13"></i> 6 min read</span>
+              </div>
+              <h4 class="fw-bold">How to Land a Summer Internship (Stage) in Tunisia</h4>
+              <p class="text-muted-custom" style="font-size: 0.9rem;">The stage hunt has a calendar, a method, and a few unwritten rules. Here is the playbook senior students actually use.</p>
+              <button class="btn btn-outline-primary btn-sm read-btn align-self-start mt-auto" data-bs-toggle="collapse" data-bs-target="#art2" aria-expanded="false">Read article <i data-lucide="chevron-down" class="chev" width="15"></i></button>
+              <div class="collapse" id="art2">
+                <div class="article-body pt-3 mt-3 border-top">
+                  <p><strong>Timing is everything:</strong> companies plan summer stages between January and April. Start your hunt in December; by May the good ones are gone. PFE internships (for final year) start filling even earlier — September to November.</p>
+                  <p><strong>Where to look:</strong></p>
+                  <ul>
+                    <li><strong>Job boards:</strong> LinkedIn, TanitJobs, Keejob, and company career pages (Vermeg, Telnet, Satoripop, Sofrecom, Wevioo, Focus, plus the IT teams of banks and startups).</li>
+                    <li><strong>The hidden market:</strong> direct email. Find a company's HR or tech lead on LinkedIn and send a short, specific message — who you are, what you can do, one link to proof. 20 tailored emails beat 200 identical applications.</li>
+                    <li><strong>Your network:</strong> club seniors, professors, family friends working in IT. In Tunisia, a recommendation moves your CV to the top of the pile. This is not cheating — it's how every industry works.</li>
+                  </ul>
+                  <p><strong>What you need ready:</strong> a one-page CV (see the Resume tools on our Resources page), a GitHub with 2–3 projects that each have a real README, and a thirty-second spoken answer to "tell me about yourself."</p>
+                  <p class="mb-0"><strong>Reality check:</strong> first-year students often get short, unpaid observation internships — take the two-week one anyway. A small company where you touch real code beats a famous logo where you watch. And whatever happens during interviews: be honest about your level, and never ghost a company that gave you an answer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 3 — Technical -->
+          <div class="col-md-6 tip-item" data-tcat="technical">
+            <div class="card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="bsoft b-tech">Technical</span>
+                <span class="read-time"><i data-lucide="clock" width="13"></i> 4 min read</span>
+              </div>
+              <h4 class="fw-bold">Git &amp; GitHub Before Your First Internship</h4>
+              <p class="text-muted-custom" style="font-size: 0.9rem;">"Do you know Git?" is the first question of every internship. Make sure the honest answer is yes — and that your profile proves it.</p>
+              <button class="btn btn-outline-primary btn-sm read-btn align-self-start mt-auto" data-bs-toggle="collapse" data-bs-target="#art3" aria-expanded="false">Read article <i data-lucide="chevron-down" class="chev" width="15"></i></button>
+              <div class="collapse" id="art3">
+                <div class="article-body pt-3 mt-3 border-top">
+                  <p><strong>Learn the 20% that covers 95% of student work:</strong> <em>clone, add, commit, push, pull, branch, merge</em>, and how to resolve a conflict without panic. One focused weekend with the free Pro Git book (it's on our Resources page) is enough to start.</p>
+                  <p><strong>Claim the GitHub Student Developer Pack today.</strong> With your university email you get GitHub Copilot free, a free domain, cloud credits and dozens of pro tools. Verification can take a few days — do it before you need it.</p>
+                  <p><strong>Make your profile a portfolio, not a landfill:</strong></p>
+                  <ul>
+                    <li>One repository per project, with a README that answers: what is it, why does it exist, screenshots, and how to run it.</li>
+                    <li>Pin your best 4–6 repositories. Recruiters really do click through — give them your strongest work first.</li>
+                    <li>Commit in small, meaningful steps with real messages ("fix login redirect on expired token"), not "final", "final2", "final_vrai_final".</li>
+                  </ul>
+                  <p class="mb-0"><strong>Two warnings that will save you one day:</strong> never commit passwords, API keys or <em>.env</em> files — bots scan public repos within minutes — and remember that green contribution squares impress nobody if the repos are empty tutorials. Three finished, documented projects beat thirty copied ones.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 4 — Freelancing -->
+          <div class="col-md-6 tip-item" data-tcat="freelancing">
+            <div class="card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="bsoft b-freel">Freelancing</span>
+                <span class="read-time"><i data-lucide="clock" width="13"></i> 7 min read</span>
+              </div>
+              <h4 class="fw-bold">Freelancing from Tunisia: Payments, Clients &amp; Reality</h4>
+              <p class="text-muted-custom" style="font-size: 0.9rem;">Yes, you can earn in euros while studying. No, it's not what Instagram promised. The honest guide to starting.</p>
+              <button class="btn btn-outline-primary btn-sm read-btn align-self-start mt-auto" data-bs-toggle="collapse" data-bs-target="#art4" aria-expanded="false">Read article <i data-lucide="chevron-down" class="chev" width="15"></i></button>
+              <div class="collapse" id="art4">
+                <div class="article-body pt-3 mt-3 border-top">
+                  <p><strong>Start local, start small.</strong> Your first three clients are not on Upwork — they're the family restaurant that needs a menu site, the dentist your cousin knows, the university club that needs a registration page. Charge little (or nothing) for the first two in exchange for testimonials and portfolio screenshots. After three real projects, you have proof; proof is what lets you raise prices.</p>
+                  <p><strong>Platforms:</strong> Fiverr is friendlier for beginners (clients come to you); Upwork pays better but requires a strong profile and patience — apply once you have those three projects. Direct international clients (found via LinkedIn or referrals) pay best of all.</p>
+                  <p><strong>The payment question everyone asks:</strong> PayPal doesn't fully work in Tunisia. The realistic options students use are Payoneer (you get a card usable locally), Wise where supported, or a direct SWIFT transfer to a <em>compte professionnel en devises</em> for larger contracts. Check current rules with your bank — regulations on foreign currency change, and staying legal protects you.</p>
+                  <p><strong>Non-negotiable habits:</strong></p>
+                  <ul>
+                    <li>Always take a 30–50% deposit before starting. Serious clients never refuse.</li>
+                    <li>Put scope in writing, even a one-page message: deliverables, revisions included, deadline, price.</li>
+                    <li>Price in EUR or USD; a student rate of 10–20€/hour increases fast once you have reviews.</li>
+                    <li>Set money aside for taxes and declare your activity (the auto-entrepreneur status exists precisely for this).</li>
+                  </ul>
+                  <p class="mb-0"><strong>Red flags:</strong> "it's great exposure", clients who disappear when deposit is mentioned, and anyone who wants free "test work" bigger than an hour. Exposure doesn't pay for your transport to university.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 5 — PFE -->
+          <div class="col-md-6 tip-item" data-tcat="pfe">
+            <div class="card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="bsoft b-pfe">PFE</span>
+                <span class="read-time"><i data-lucide="clock" width="13"></i> 5 min read</span>
+              </div>
+              <h4 class="fw-bold">The 15-Minute PFE Presentation That Impresses the Jury</h4>
+              <p class="text-muted-custom" style="font-size: 0.9rem;">The jury has watched twelve defenses before yours. Here's how to be the one they remember — for the right reasons.</p>
+              <button class="btn btn-outline-primary btn-sm read-btn align-self-start mt-auto" data-bs-toggle="collapse" data-bs-target="#art5" aria-expanded="false">Read article <i data-lucide="chevron-down" class="chev" width="15"></i></button>
+              <div class="collapse" id="art5">
+                <div class="article-body pt-3 mt-3 border-top">
+                  <p><strong>The slide math:</strong> twelve to fifteen slides maximum. One idea per slide, big fonts (28pt+), almost no paragraphs. If a slide needs you to say "as you can read here…", delete the text and keep a diagram.</p>
+                  <p><strong>The structure that works:</strong> hook with the problem in one sentence ("Managing X at company Y still takes 3 days — my project makes it 10 minutes"), then context, solution, architecture, and your centerpiece: a calm, rehearsed demo of the main user flow. Close with results, limits, and what you'd do next — admitting limits signals maturity, not weakness.</p>
+                  <p><strong>Demo survival kit:</strong></p>
+                  <ul>
+                    <li>A screen-recorded backup video if the live system fails (plus screenshots if the video does).</li>
+                    <li>Pre-logged accounts, pre-filled forms — never type long text live.</li>
+                    <li>Your slides exported to PDF on a USB stick, because fonts and projectors are ancient enemies.</li>
+                  </ul>
+                  <p><strong>Delivery:</strong> rehearse out loud five times minimum, twice against a timer. On the day: breathe before starting, look at the jury not the screen, and use the magic phrase for hard questions — "That's an excellent point; my choice was X because Y, and with more time I would test Z."</p>
+                  <p class="mb-0"><strong>One last thing:</strong> answer in the language you're asked in (usually French), never read from notes, and end by thanking your encadrant and the jury. Ten seconds of grace is remembered longer than ten slides of architecture.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 6 — Career -->
+          <div class="col-md-6 tip-item" data-tcat="career">
+            <div class="card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="bsoft b-career">Career</span>
+                <span class="read-time"><i data-lucide="clock" width="13"></i> 4 min read</span>
+              </div>
+              <h4 class="fw-bold">A LinkedIn That Works While You Sleep</h4>
+              <p class="text-muted-custom" style="font-size: 0.9rem;">Tunisian recruiters genuinely scout LinkedIn. One focused weekend turns your empty profile into an opportunity magnet.</p>
+              <button class="btn btn-outline-primary btn-sm read-btn align-self-start mt-auto" data-bs-toggle="collapse" data-bs-target="#art6" aria-expanded="false">Read article <i data-lucide="chevron-down" class="chev" width="15"></i></button>
+              <div class="collapse" id="art6">
+                <div class="article-body pt-3 mt-3 border-top">
+                  <p><strong>The 30-minute fixes with the highest return:</strong></p>
+                  <ul>
+                    <li><strong>Photo:</strong> daylight, plain background, shoulders up, friendly face. No beach, no graduation group crop.</li>
+                    <li><strong>Headline:</strong> replace "Étudiant à X" with "CS Student @ ISI | Full-Stack (React &amp; Node) | Seeking PFE 2026". Recruiters search by skills — be findable.</li>
+                    <li><strong>About:</strong> 4–5 lines, ideally in English <em>and</em> French — Tunisian recruiters read both. Keywords matter more than poetry.</li>
+                    <li><strong>Featured section:</strong> pin your GitHub, your best project, and your CV. This is your shop window.</li>
+                    <li><strong>Experience:</strong> internships <em>and</em> club roles count. "Organized a 200-person hackathon" is leadership experience — write it like it.</li>
+                  </ul>
+                  <p><strong>The compound part (15 minutes, twice a week):</strong> connect with alumni from your university, follow the companies you'd actually apply to, and leave two thoughtful comments on industry posts. Visibility is cumulative — the recruiter who sees your name three times before your application arrives already half-knows you.</p>
+                  <p class="mb-0"><strong>Asking for referrals the right way:</strong> short message, specific request, easy to say yes to. "Hi, I saw Company X opened a PFE backend internship — I've built Y and Z; would you feel comfortable referring me?" beats "bjr, cherche stage" every single time. And when you land something: close the loop and say thank you. The Tunisian tech scene is small, and it remembers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 7 — University -->
+          <div class="col-md-6 tip-item" data-tcat="university">
+            <div class="card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="bsoft b-uni">University</span>
+                <span class="read-time"><i data-lucide="clock" width="13"></i> 6 min read</span>
+              </div>
+              <h4 class="fw-bold">Studying Abroad from Tunisia: The Honest Timeline</h4>
+              <p class="text-muted-custom" style="font-size: 0.9rem;">Erasmus+, Campus France, Germany — the doors are real, but they open on a strict calendar. Start earlier than feels necessary.</p>
+              <button class="btn btn-outline-primary btn-sm read-btn align-self-start mt-auto" data-bs-toggle="collapse" data-bs-target="#art7" aria-expanded="false">Read article <i data-lucide="chevron-down" class="chev" width="15"></i></button>
+              <div class="collapse" id="art7">
+                <div class="article-body pt-3 mt-3 border-top">
+                  <p><strong>Rule zero:</strong> decide in your second year, apply in your third. Most students lose a full year simply because they discovered deadlines after they passed.</p>
+                  <p><strong>The main doors:</strong></p>
+                  <ul>
+                    <li><strong>Erasmus+ exchanges:</strong> semester or year abroad through your own university's international office — ask them directly what partnerships exist; spots are poorly advertised and sometimes barely competed for.</li>
+                    <li><strong>France (Campus France / "Études en France"):</strong> the classic route for a master's. Applications roughly run from October to January for the following year; a TCF language test is usually required, so book it months ahead.</li>
+                    <li><strong>Germany:</strong> low or zero tuition, applications via Uni-Assist; DAAD scholarships for strong files. Note the blocked-account requirement (~11,000+ €/year) — plan finances early.</li>
+                    <li><strong>Double degrees:</strong> some Tunisian schools have official partnerships (ask at INSAT, ENIT, Polytechnique and similar). You graduate with both diplomas — arguably the best deal of all.</li>
+                  </ul>
+                  <p><strong>Your file, realistically:</strong> strong transcripts matter most; then language tests (TCF for French, IELTS/TOEFL/TestDaF where needed); then motivation letters that are specific to the program, not copy-pasted. Prepare certified document copies early and keep your passport valid 6+ months beyond any application date.</p>
+                  <p class="mb-0"><strong>Expect rejection — it's math, not worth.</strong> Apply to 5–10 programs across countries, treat each "no" as one step closer, and ask seniors who made it to review your file. They exist in every university; find them through clubs or LinkedIn.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 8 — Technical -->
+          <div class="col-md-6 tip-item" data-tcat="technical">
+            <div class="card lift h-100 p-4 d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="bsoft b-tech">Technical</span>
+                <span class="read-time"><i data-lucide="clock" width="13"></i> 5 min read</span>
+              </div>
+              <h4 class="fw-bold">Escape Tutorial Hell: Build, Deploy, Repeat</h4>
+              <p class="text-muted-custom" style="font-size: 0.9rem;">Thirty courses completed, zero projects finished? You don't have a learning problem — you have a building problem.</p>
+              <button class="btn btn-outline-primary btn-sm read-btn align-self-start mt-auto" data-bs-toggle="collapse" data-bs-target="#art8" aria-expanded="false">Read article <i data-lucide="chevron-down" class="chev" width="15"></i></button>
+              <div class="collapse" id="art8">
+                <div class="article-body pt-3 mt-3 border-top">
+                  <p><strong>The diagnosis:</strong> tutorials feel productive because watching someone code is easy, and "one more course" always feels safer than facing a blank editor. The symptom is familiar — you understand every video and freeze on every blank file.</p>
+                  <p><strong>The 2-to-1 rule:</strong> for every 2 hours of tutorials, spend at least 1 hour building <em>without</em> the video. Struggling to recall is exactly what converts watching into knowing.</p>
+                  <p><strong>The escape ladder:</strong></p>
+                  <ul>
+                    <li><strong>Step 1 — Clone:</strong> rebuild the tutorial project alone, with the video closed, checking docs when stuck.</li>
+                    <li><strong>Step 2 — Modify:</strong> add one feature nobody showed you (dark mode, export to CSV, a search bar). This is where real learning happens.</li>
+                    <li><strong>Step 3 — Original:</strong> build something tiny but yours — a bus schedule for your hometown, a stock manager for the family shop, your club's website. Small and shipped beats big and abandoned.</li>
+                  </ul>
+                  <p><strong>Deploy everything</strong> (Vercel/Netlify for frontends, Render for backends, Supabase or Firebase for data) — a live URL in your CV is worth ten course certificates. Then write a short LinkedIn post about each project: what you built, what broke, what you learned. That's how students get discovered.</p>
+                  <p class="mb-0"><strong>Bugdet move:</strong> once comfortable, read other people's code on GitHub and try Hacktoberfest for a first open-source PR. Reading production code is the closest thing to a free senior mentorship that exists.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /#tipsGrid -->
+
+        <!-- Empty state for tips -->
+        <div id="noTips" class="text-center py-5 d-none">
+          <h5 class="fw-bold">No guides in this category yet</h5>
+          <p class="text-muted-custom mb-3">Try another category — or suggest a topic via the form below.</p>
+          <a href="https://forms.gle/tundev-suggest" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">Suggest a topic <i data-lucide="arrow-up-right" width="14"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       SHARED FOOTER
+       ============================================================ -->
+  <footer class="footer pt-5">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-md-5 col-lg-5">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <svg class="flag-mark" viewBox="0 0 32 32" aria-hidden="true">
+              <circle cx="16" cy="16" r="15" fill="#E63946"/>
+              <circle cx="16" cy="16" r="8.6" fill="#fff"/>
+              <path fill="#E63946" d="M15 12.2a3.9 3.9 0 1 0 0 7.6 4.6 4.6 0 0 1 0-7.6zm2.8 1.5l.9 1.7 1.9.2-1.4 1.3.4 1.9-1.7-1-1.7 1 .4-1.9-1.4-1.3 1.9-.2z"/>
+            </svg>
+            <span class="brand-text text-white">Tun<em style="color: var(--accent);">Dev</em></span>
+          </div>
+          <h6>About TunDev</h6>
+          <p style="font-size: 0.9rem; max-width: 380px;">
+            A free, community-driven resource hub built by Tunisian IT students, for Tunisian IT students.
+            We collect the courses, tools, roadmaps and local advice that actually move you forward —
+            so the next generation starts one step ahead of where we did.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3 offset-lg-1">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled quick-links" style="font-size: 0.92rem; line-height: 2;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="roadmaps.html">Roadmaps</a></li>
+            <li><a href="tunisia.html">Tunisia</a></li>
+            <li><a href="tips.html">Tips &amp; Guides</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <h6>Contact</h6>
+          <a class="contact-line" href="mailto:contact@tundev.tn" target="_blank" rel="noopener noreferrer"><i data-lucide="mail"></i> contact@tundev.tn</a>
+          <a class="contact-line" href="https://github.com/TunDev" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> github.com/TunDev</a>
+          <a class="contact-line" href="https://www.linkedin.com/company/tundev" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> /company/tundev</a>
+          <a href="https://forms.gle/tundev-suggest" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm mt-2">
+            Suggest a Resource <i data-lucide="arrow-up-right" width="13"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-center align-items-center gap-1 gap-md-3 py-3 text-center">
+        <span>Made with
+          <svg class="heart" width="14" height="14" viewBox="0 0 24 24" fill="#E63946" style="vertical-align: -2px;" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          in Tunisia
+        </span>
+        <span class="d-none d-md-inline" style="opacity: 0.35;">|</span>
+        <span>© 2025 TunDev — For students, by students</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="toTop" aria-label="Back to top" title="Back to top"><i data-lucide="arrow-up" width="19"></i></button>
+</body>
+</html>
